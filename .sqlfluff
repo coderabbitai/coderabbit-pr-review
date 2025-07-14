@@ -1,0 +1,26 @@
+[sqlfluff]
+dialect = ansi
+templater = jinja
+exclude_rules = L009  # trailing comma enforcement skipped
+format = json
+nocolor = True
+
+[sqlfluff:rules]
+max_line_length = 100
+tab_space_size = 4
+
+[sqlfluff:rules:L010]  # Keywords
+capitalisation_policy = upper
+
+[sqlfluff:rules:L014]  # Unquoted identifiers
+extended_capitalisation_policy = consistent
+
+[sqlfluff:rules:L016]  # Line length
+max_line_length = 100
+
+[sqlfluff:rules:L019]  # Leading comma check
+comma_style = trailing
+
+[sqlfluff:rules:L030]  # Function names
+capitalisation_policy = lower
+
