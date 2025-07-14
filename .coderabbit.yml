@@ -1,2 +1,5 @@
 reviews:
-  path_filters: ["**/*.json", "**/*.yml"]
+  tools:
+    # oxlint does not run if biome is enabled
+    biome:
+      enabled: false
