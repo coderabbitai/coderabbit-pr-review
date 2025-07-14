@@ -1,2 +1,2 @@
 reviews:
-  path_filters: ["**/*.json"]
+  path_filters: ["**/*.json", "**/*.yml"]
