@@ -1,7 +1,13 @@
 # .semgrep.yml
-include:
-  - semgrep/example.py
+rules:
+  - id: hardcoded-password
+    pattern: password = "$SECRET"
+    message: "Avoid hardcoded passwords"
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
 
-configs:
-  - semgrep/semgrep.yml
+include:
+  - semgrep/  # or even semgrep/example.py
 
