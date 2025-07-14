@@ -1,0 +1,6 @@
+name: Sample
+  version: 1.0
+items:
+  - id: 1
+    name: Item One
+
