@@ -7,7 +7,6 @@
 ## 📦 Version
 
 `PHPSTAN_VERSION: 2.1.17`
-Includes performance improvements, stricter type checks, and enhanced support for PHP language features.
 
 ---
 
