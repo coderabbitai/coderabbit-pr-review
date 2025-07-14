@@ -1,16 +1,32 @@
-import os, sys  # F401: sys imported but unused
+import os
+import sys
+import hashlib
 
-def my_function(  x, y ):
-  print(  "Result:",x+y )  # E201, E202, E231, E221
+# Hardcoded credentials
+USERNAME = "admin"
+PASSWORD = "secret123"
 
-class myclass:  # N801: class name should use CapWords convention
- def __init__(self):
-     self.value =42  # E225: missing whitespace around operator
-     
- def doSomething(self):  # N802: function name should be snake_case
-    if( self.value>0 ):
-         print("Positive")
-    else:
-         print( "Not positive" )
-         
-my_function(1,2)
+def dangerous_eval():
+    user_input = input("Enter a Python expression: ")
+    result = eval(user_input)
+    print("Evaluated result:", result)
+
+def delete_data(path):
+    os.system("rm -rf " + path)  # Semgrep: shell injection
+
+def hash_password(password):
+    hashed = hashlib.md5(password.encode()).hexdigest()  # Semgrep: weak hash
+    return hashed
+
+def main():
+    print("Logging in as", USERNAME)
+    password_hash = hash_password(PASSWORD)
+    print("Password hash:", password_hash)
+
+    if len(sys.argv) > 1:
+        delete_data(sys.argv[1])
+    
+    dangerous_eval()
+
+main()
+
