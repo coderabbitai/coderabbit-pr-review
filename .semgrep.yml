@@ -1,0 +1,7 @@
+# .semgrep.yml
+include:
+  - semgrep/  # or: semgrep/example.py if you want to be specific
+
+configs:
+  - semgrep/semgrep.yml
+
