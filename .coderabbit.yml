@@ -1,2 +1,3 @@
 reviews:
-  path_filters: ["**/*.yml","**/*.yaml"]
+  path_filters: ["**/*.yml", "**/*.yaml", "**/*.liquid"]
+
