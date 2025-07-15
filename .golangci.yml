@@ -2,7 +2,6 @@ run:
   timeout: 2m
 linters:
   enable:
-    - deadcode
     - unused
     - govet
     - gofmt

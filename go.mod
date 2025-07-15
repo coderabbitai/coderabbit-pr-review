@@ -1,2 +1,4 @@
-go mod init example.com/test
+module example.com/test
+
+go 1.20
 
