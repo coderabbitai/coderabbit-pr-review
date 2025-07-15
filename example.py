@@ -1,0 +1,35 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../generated/prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "fake-url"
+}
+
+model Users {
+  id           String @id
+  emailAddress String
+  tenantId     String
+  removeMe     String @ignore
+  tenant       Tenant @relation(fields: [tenantId], references: [id])
+  @@map(name: "users")
+}
+
+model Tenant {
+  id         String @id
+  name       String
+  @@map(name: "tenant")
+}
+
+model UserRoleFoo {
+  id         String @id
+  @@map(name: "unexpected_snake_case")
+}
+
+model UserRole {
+  id         String @id
+  userId     String @map(name: "userid")
+  // No mapping.
+}
