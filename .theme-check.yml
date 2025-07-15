@@ -1,5 +1,7 @@
-if (!configPath) {
-	logger.warn(`${loggerPrefix}config file not found, skipping tool`)
-	return toolRunFailure
-}
+# theme-check.yml
+include_paths:
+  - '**/*'
 
+# Explicitly enable all checks (by default, all are enabled)
+checks:
+  all: true
