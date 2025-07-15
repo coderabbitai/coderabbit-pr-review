@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package exampletest;
+
+message user_info {
+  string full_name = 1;
+  int32 age_years = 2;
+}
+
+enum status {
+  UNKNOWN = 0;
+  ACTIVE = 1;
+  INACTIVE = 2;
+}
+
