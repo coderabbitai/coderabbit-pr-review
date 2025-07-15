@@ -1,0 +1,2 @@
+reviews:
+  path_filters: ["**/.prismalintrc.json",".prismalintrc.json", "**/example.prisma", "example.prisma"]

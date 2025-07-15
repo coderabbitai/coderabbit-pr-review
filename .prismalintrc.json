@@ -1,0 +1,36 @@
+{
+  "rules": {
+    "field-name-mapping-snake-case": [
+      "error",
+      {
+        "compoundWords": ["S3"]
+      }
+    ],
+    "field-order": [
+      "error",
+      {
+        "order": ["tenantId", "..."]
+      }
+    ],
+    "forbid-required-ignored-field": ["error"],
+    "model-name-grammatical-number": [
+      "error",
+      {
+        "style": "singular"
+      }
+    ],
+    "model-name-mapping-snake-case": [
+      "error",
+      {
+        "compoundWords": ["GraphQL"]
+      }
+    ],
+    "require-field-index": [
+      "error",
+      {
+        "forAllRelations": true,
+        "forNames": ["tenantId"]
+      }
+    ]
+  }
+}
