@@ -1,0 +1,16 @@
+format:
+  max-line-length: 100
+  indentation: 2
+
+lint:
+  enabled: true
+  severity:
+    default: error  # Escalated for CI to catch violations
+
+rules:
+  - no-unused-vars
+  - no-shadowing
+  - test-missing-assertion
+  - test-does-nothing
+  - var-uppercase
+
