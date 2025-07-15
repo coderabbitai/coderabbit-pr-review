@@ -1,0 +1,5 @@
+if (!configPath) {
+	logger.warn(`${loggerPrefix}config file not found, skipping tool`)
+	return toolRunFailure
+}
+
