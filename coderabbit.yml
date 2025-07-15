@@ -1,4 +1,5 @@
 reviews:
+  path_filters: ["**/*.yml"]
   tools:
     # oxlint does not run if biome is enabled
     biome:
