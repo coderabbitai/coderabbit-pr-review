@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="CodeRabbit PMD Ruleset"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+                             http://pmd.sourceforge.net/ruleset_2_0_0.xsd"
+         description="PMD rules aligned with CodeRabbit standards for general-purpose Java projects.">
+
+    <!-- Keep existing valid rules -->
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateField"/>
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
+    <rule ref="category/java/errorprone.xml/ReturnFromFinallyBlock"/>
+    <rule ref="category/java/codestyle.xml/UnnecessaryConstructor"/>
+    
+    <!-- Replace deprecated VariableNamingConventions with specific naming rules -->
+    <rule ref="category/java/codestyle.xml/LocalVariableNamingConventions">
+        <properties>
+            <property name="localVarPattern" value="^[a-z][a-zA-Z0-9]*$"/>
+        </properties>
+    </rule>
+    
+    <!-- Replace deprecated ExcessiveMethodLength with NcssCount -->
+    <rule ref="category/java/design.xml/NcssCount">
+        <properties>
+            <property name="methodReportLevel" value="25"/>
+            <property name="classReportLevel" value="500"/>
+        </properties>
+    </rule>
+    
+    <!-- Optional: Add other specific naming convention rules -->
+    <rule ref="category/java/codestyle.xml/FieldNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/MethodNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/ClassNamingConventions"/>
+    
+</ruleset>
