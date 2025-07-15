@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
-	// intentional lint error: empty function body, unused import
+	var unusedVar int
+	fmt.Println("Hello, world!")
 }
 
