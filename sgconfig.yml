@@ -1,0 +1,33 @@
+rules:
+  - id: no-console-log
+    message: Avoid using console.log
+    severity: warning
+    language: ts
+    pattern: console.log($$$)
+
+  - id: no-any-type
+    message: Avoid using `any` type
+    severity: warning
+    language: ts
+    pattern: ($VAR:identifier): any
+
+  - id: no-var
+    message: Use `let` or `const` instead of `var`
+    severity: warning
+    language: ts
+    pattern: var $VAR = $$$
+
+  - id: no-debugger
+    message: Remove `debugger` statement
+    severity: warning
+    language: ts
+    pattern: debugger
+
+  - id: no-empty-function
+    message: Avoid using empty functions
+    severity: warning
+    language: ts
+    pattern: |
+      function $NAME($$$) {
+      }
+
