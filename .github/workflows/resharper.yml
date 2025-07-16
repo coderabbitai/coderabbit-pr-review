@@ -1,0 +1,27 @@
+name: ReSharper Inspection
+
+on:
+  pull_request:
+
+jobs:
+  inspection:
+    runs-on: ubuntu-latest
+    name: ReSharper Code Inspection
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup .NET
+        id: setup-dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+          
+      - name: Restore
+        run: dotnet restore BadCodeProject.sln
+        
+      - name: Inspect code with ReSharper
+        uses: muno92/resharper_inspectcode@v1
+        with:
+          solutionPath: ./BadCodeProject.sln
+          dotnetVersion: ${{ steps.setup-dotnet.outputs.dotnet-version }} 
