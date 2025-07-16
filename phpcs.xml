@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ruleset name="Strictest Coding Standards">
+
+    <!-- Description -->
+    <description>
+        Enforces strict coding standards by combining multiple standards and custom rules.
+    </description>
+
+    <!-- Directories and file patterns to ignore -->
+    <exclude-pattern>vendor/*</exclude-pattern>
+    <exclude-pattern>node_modules/*</exclude-pattern>
+    <exclude-pattern>storage/*</exclude-pattern>
+    <exclude-pattern>cache/*</exclude-pattern>
+    <exclude-pattern>*.min.js</exclude-pattern>
+
+    <!-- Rulesets to use (add/remove as needed) -->
+    <rule ref="PSR12"/>
+    <rule ref="Squiz"/>
+    <rule ref="Generic"/>
+    <rule ref="PEAR"/>
+    <rule ref="Zend"/>
+    <rule ref="MySource"/>
+    <rule ref="PSR1"/>
+
+    <!-- Optionally enable some stricter rules -->
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <rule ref="Generic.Formatting.SpaceAfterNot"/>
+    <rule ref="Squiz.Functions.GlobalFunction"/>
+    <rule ref="Squiz.Functions.FunctionDuplicateArgument"/>
+    <rule ref="Squiz.Scope.MethodScope"/>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+    <rule ref="Generic.PHP.ForbiddenFunctions"/>
+    <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
+
+    <!-- Report errors as warnings for visibility, or adjust as needed -->
+    <arg name="report" value="full"/>
+    <arg name="colors"/>
+    <arg name="encoding" value="utf-8"/>
+
+    <!-- Extensions to check -->
+    <fileExtensions>
+        <extension>php</extension>
+        <extension>inc</extension>
+        <extension>phtml</extension>
+    </fileExtensions>
+
+</ruleset>
