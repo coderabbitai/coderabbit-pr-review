@@ -1,0 +1,5 @@
+reviews:
+  tools:
+    # oxlint does not run if biome is enabled
+    ruff: 
+      enabled: false

@@ -1,0 +1,53 @@
+[tool.pylint.main]
+# Fail on any warning or error
+fail-under = 10.0
+output-format = "colorized"
+reports = true
+
+[tool.pylint.messages_control]
+# Enable all messages
+disable = []
+
+[tool.pylint.basic]
+# Enable all basic coding checks
+good-names = []
+bad-names = ["foo", "bar", "baz", "tmp", "test"]
+
+[tool.pylint.format]
+max-line-length = 88
+indent-string = "    "
+
+[tool.pylint.design]
+max-args = 5
+max-locals = 15
+max-returns = 6
+max-branches = 12
+max-statements = 50
+
+[tool.pylint.similarities]
+# Enable all similarity checks
+min-similarity-lines = 4
+
+[tool.pylint.typecheck]
+ignore-mixin-members = false
+
+[tool.pylint.imports]
+# Warn about any import issue
+known-standard-library = []
+
+[tool.pylint.logging]
+logging-modules = ["logging"]
+
+[tool.pylint.variables]
+# Warn on all variable issues
+dummy-variables-rgx = "^_.*|dummy"
+
+[tool.pylint.spelling]
+spelling-dict = ""
+spelling-ignore-words = []
+spelling-private-dict-file = ""
+
+[tool.pylint.reports]
+output-format = "colorized"
+reports = true
+score = true
