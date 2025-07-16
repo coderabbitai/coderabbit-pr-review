@@ -1,0 +1,8 @@
+{% section 'header' %}
+<main>
+  <h2>Featured Products</h2>
+  {% for product in collections.frontpage.products %}
+    {% include 'product-card'  {# Missing closing %} tag #}
+  {% endfor %}
+</main>
+{% section 'footer'  {# Using "section" instead of include for footer, and missing closing %} #}

@@ -1,0 +1,8 @@
+/* CSS with deliberate issues */
+body {
+  font-family: Arial sans-serif    /* Missing comma between fonts and no semicolon */
+  color: #333
+}
+.invalid-selector {
+  --unknown: 123   /* Invalid property/value syntax */
+}

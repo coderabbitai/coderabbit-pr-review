@@ -1,0 +1,13 @@
+[
+  {
+    "name": "General",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Store Title",
+        "default": "My Shopify Store",
+      }   // Trailing comma causes invalid JSON
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page_title </title>  {# Missing closing curly brace and invalid Liquid tag #}
+  {{ 'style.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+  {% include 'header' %}  {# Assume this is meant to call a section/snippet but syntax might be off #}
+  {{ content_for_layout }
+  {% include 'footer' %}
+  {{ 'theme.js' | asset_url | script_tag }}
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Explicitly enable all checks (by default, all are enabled)
+checks:
+  all: true

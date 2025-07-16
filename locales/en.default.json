@@ -1,0 +1,5 @@
+{
+  "general": {
+    "welcome": "Welcome to our store!",  // Trailing comma causes invalid JSON
+  }
+}
