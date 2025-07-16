@@ -1,2 +1,4 @@
-reviews:
-  path_filters: ["**/*.yml","**/*.yaml"]
+files:
+  include:
+    - "**/*.yml"
+    - "**/*.yaml"
