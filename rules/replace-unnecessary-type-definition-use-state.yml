@@ -1,0 +1,7 @@
+id: replace-unnecessary-type-definition-use-state
+language: "typescript"
+rule:
+  any:
+    - pattern: useState<string>($A)
+fix:
+  useState($A)

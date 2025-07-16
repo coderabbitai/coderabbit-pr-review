@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+early_access: true
+reviews:
+  path_instructions:
+    - path: "**/*.{js,ts}"
+      instructions: "Ensure that all constant variables are defined using UPPER CASE letters"
+  tools:
+    ast-grep:
+      rule_dirs:
+        - "rules"
+        - "test-missing-dir"
+      packages:
+        - "test-peter-rabbit/test-ast-grep-custom-package"

@@ -1,0 +1,15 @@
+id: ts-const
+language: Typescript
+rule:
+  all:
+    - any:
+      - pattern: "const $VAR: $TYPE = $VALUE"
+      - pattern: "const $VAR = $VALUE"
+    - inside:
+        kind: program
+constraints:
+   VAR:
+    regex: '.*[^A-Z_].*'
+severity: warning
+message: Always capitalize const variables
+note: Const variables should be capitalized
