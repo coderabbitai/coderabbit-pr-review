@@ -1,0 +1,23 @@
+name: C# Linter
+
+# ───────────── TRIGGER ─────────────
+on:
+  pull_request:
+
+# ───────────── JOBS ─────────────
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'   # .NET 8 already contains 'dotnet format'; no extra tool install needed
+
+    # Restore & analyze the new project
+    - name: Restore packages
+      run: dotnet restore BadCodeProject.csproj
+
+    - name: Run dotnet format
+      run: dotnet format BadCodeProject.csproj --verify-no-changes --severity info

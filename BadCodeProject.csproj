@@ -1,0 +1,13 @@
+<!-- BadCodeProject.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- explicitly include the demo file so the project builds -->
+  <ItemGroup>
+    <Compile Include="BadCode.cs" />
+  </ItemGroup>
+</Project>
