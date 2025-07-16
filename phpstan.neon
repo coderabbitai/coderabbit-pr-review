@@ -1,0 +1,9 @@
+parameters:
+    level: 0
+    paths:
+        - .
+    excludePaths:
+        - vendor/*
+        - node_modules/*
+        - .git/*
+
