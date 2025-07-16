@@ -1,0 +1,14 @@
+id: no-console-except-error
+language: javascript
+message: 'Do not use console.$METHOD except for console.error in catch clause'
+rule:
+  any:
+    - pattern: console.error($$$)
+      not:
+        inside:
+          kind: catch_clause
+          stopBy: end
+    - pattern: console.$METHOD($$$)
+constraints:
+  METHOD:
+    regex: 'log|debug|warn'
