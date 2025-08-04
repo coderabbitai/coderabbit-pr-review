@@ -1,4 +1,4 @@
-# simple_utils.py - A tiny utility library
+# simple_utils.py - A tiny utility libraryq
 
 def reverse_string(text):
     """Reverses the characters in a string."""
