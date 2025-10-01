@@ -1,0 +1,7 @@
+reviews:
+  path_filters:
+    - "**/*.yml"
+    - "**/*.yaml"
+    - "**/*.go"
+    - "**/*.mod"
+
