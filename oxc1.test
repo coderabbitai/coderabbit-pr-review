@@ -1,0 +1,84 @@
+// Unused variable
+function unusedVariableDemo() {
+    let unusedVar = 'this is never used';
+}
+
+// Unreachable code after return
+function unreachableCode() {
+    return true;
+    console.log('This is unreachable');
+}
+
+// Missing semicolon
+function missingSemicolon() {
+    console.log('Missing semicolon here')
+}
+
+// Redeclared variable
+function redeclareVariable() {
+    let value = 1;
+    let value = 2; // Redeclaration error
+}
+
+// Incorrect equality comparison (use strict equality)
+function incorrectEquality(a) {
+    if (a == null) {
+        console.log('Use strict equality instead.');
+    }
+}
+
+// Empty block
+if (true) {}
+
+// Console statement (assuming no-console rule active)
+console.log('Console logging should be flagged.');
+
+// Shadowed variable names
+let shadowVar = 'outer';
+function shadowVariable() {
+    let shadowVar = 'inner'; // shadows outer variable
+    console.log(shadowVar);
+}
+
+// Use of var instead of let/const
+function varUsage() {
+    var legacyVar = 123;
+    return legacyVar;
+}
+
+// Improper indentation
+function indentation() {
+console.log('Improper indentation');
+}
+
+// Trailing spaces       
+function trailingSpace() {     
+    return 42;     
+} 
+
+// Mixed spaces and tabs
+function mixedSpacesTabs() {
+	    console.log('Mixed indentation with tabs and spaces');
+}
+
+// Undefined variable
+function undefinedVariable() {
+    console.log(nonExistentVar);
+}
+
+// unused variable
+function unusedVarExample() {
+    const unusedVariable = "unused";
+}
+
+// unreachable code
+function unreachableExample() {
+    return;
+    console.log("unreachable");
+}
+
+// missing semicolon
+console.log("semicolon missing")
+
+// redeclared variable
+let duplicateVar

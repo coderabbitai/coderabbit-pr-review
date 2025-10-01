@@ -1,0 +1,106 @@
+// Explicit any type
+function explicitAny(a: any): any {
+    return a;
+}
+
+// Redeclared variable
+let foo = 123;
+let foo = 456;
+
+// Duplicate parameters
+function duplicateParams(a: number, a: number) {
+    return a;
+}
+
+// Constant reassignment
+const MY_CONST = 'value';
+MY_CONST = 'newValue';
+
+// Invalid assignment
+function invalidAssignment() {
+    true = false;
+}
+
+// Reserved keywords as identifiers
+const class = 'illegal';
+
+// Unreachable code
+function unreachable(): number {
+    return 1;
+    console.log("never reached");
+}
+
+// Misuse of async/await
+await Promise.resolve();
+
+// Invalid usage of enum
+enum Colors {
+    Red,
+    Green,
+    Red
+}
+
+// Empty interface
+interface EmptyInterface {}
+
+// Empty function body
+function emptyFunction() {}
+
+// Illegal use of break
+break;
+
+// Illegal use of continue
+continue;
+
+// Illegal return outside function
+return 123;
+
+// Unused variable
+let unusedVar: number = 5;
+
+// Use before definition
+console.log(undeclaredVar);
+
+// Duplicate object literal keys
+const myObject = {
+    name: 'John',
+    name: 'Doe'
+};
+
+// Function overload conflict
+function overloadConflict(a: string): void;
+function overloadConflict(a: number): number;
+function overloadConflict(a: string | number) {
+    return a;
+}
+function overloadConflict(a: boolean) {
+    return a;
+}
+
+// Type assertion with no effect
+let someNum = 123 as number;
+
+// Useless cast
+let uselessCast = "hello" as any as string;
+
+// Shadowed variable
+let shadow = 1;
+function shadowVar() {
+    let shadow = 2;
+    return shadow;
+}
+
+// Illegal trailing commas
+const illegalTrailingComma = {
+    foo: "bar",
+};
+
+// Promise without await or catch
+async function promiseIssue() {
+    Promise.resolve();
+}
+
+// Misuse of generics
+function genericMisuse<T>(x: T) {
+    return x.invalidProperty;
+}
