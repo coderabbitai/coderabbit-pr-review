@@ -1,0 +1,7 @@
+# Preview/Clang-Tidy demo branch: we want ONLY clang-tidy to comment on
+# C/C++ files so the tool's output is visible and unambiguous. Disabling
+# cppcheck avoids duplicate/overlapping findings from both static analyzers.
+reviews:
+  tools:
+    cppcheck:
+      enabled: false
