@@ -1,0 +1,7 @@
+[
+  {
+    "directory": "/home/jailuser/git",
+    "file": "test.cpp",
+    "command": "clang++ -std=c++17 -I. -c test.cpp"
+  }
+]
