@@ -1,7 +1,0 @@
-[
-  {
-    "directory": "clang-tidy",
-    "command": "clang++ -std=c++17 -Wall -Wextra -c test.cpp -o test.o",
-    "file": "test.cpp"
-  }
-]
