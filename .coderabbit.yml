@@ -1,0 +1,8 @@
+reviews:
+  tools:
+    checkov:
+      enabled: false
+    hadolint:
+      enabled: false
+    gitleaks:
+      enabled: false

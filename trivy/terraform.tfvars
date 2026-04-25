@@ -1,0 +1,6 @@
+environment       = "production"
+region            = "us-east-1"
+db_username       = "demoapp"
+db_password       = "Sup3rS3cr3tP@ssword"
+admin_api_token   = "internal_token_2c8b41d9c0a64e1e9b0f3e7a1d5c8b41"
+private_key_pem   = "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAyqXmSVk3...truncated...AAAA\n-----END RSA PRIVATE KEY-----"
