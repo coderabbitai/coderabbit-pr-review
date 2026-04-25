@@ -1,0 +1,13 @@
+FROM ubuntu:latest
+
+ENV API_TOKEN=internal_token_2c8b41d9c0a64e1e9b0f3e7a1d5c8b41
+ENV AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+ENV AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+RUN apt-get update && apt-get install -y curl
+
+COPY . /app
+
+EXPOSE 22
+
+CMD ["/app/legacy-agent"]
