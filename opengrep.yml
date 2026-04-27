@@ -1,0 +1,139 @@
+rules:
+  - id: python-sql-injection-string-concat
+    pattern-either:
+      - pattern: $CURSOR.execute("..." + $X)
+      - pattern: $CURSOR.execute(f"...{$X}...")
+      - pattern: $CURSOR.execute("...%s..." % $X)
+    message: >-
+      SQL injection: query built via string concatenation/formatting with
+      untrusted input. Use parameterized queries.
+    languages: [python]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-89"
+      owasp: "A03:2021 - Injection"
+
+  - id: python-insecure-deserialization-pickle
+    pattern-either:
+      - pattern: pickle.loads(...)
+      - pattern: pickle.load(...)
+    message: >-
+      Insecure deserialization via pickle. pickle.loads on untrusted input
+      enables arbitrary code execution.
+    languages: [python]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-502"
+
+  - id: python-exec-on-input
+    pattern: exec($X)
+    message: >-
+      Dynamic code execution via exec() on untrusted input is a code-injection
+      vulnerability.
+    languages: [python]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-95"
+
+  - id: python-subprocess-shell-true
+    pattern: subprocess.$FUNC(..., shell=True, ...)
+    message: >-
+      subprocess called with shell=True; if any argument is untrusted, this
+      enables command injection.
+    languages: [python]
+    severity: WARNING
+    metadata:
+      cwe: "CWE-78"
+
+  - id: js-xss-innerhtml-assignment
+    pattern: $X.innerHTML = $Y
+    message: >-
+      Potential XSS: assigning to innerHTML with untrusted data. Use textContent
+      or escape the value.
+    languages: [javascript]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-79"
+      owasp: "A03:2021 - Injection"
+
+  - id: js-eval-call
+    pattern: eval(...)
+    message: >-
+      Use of eval() enables arbitrary code execution if input is attacker
+      controlled.
+    languages: [javascript]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-95"
+
+  - id: js-child-process-exec-template
+    pattern-either:
+      - pattern: exec(`...${$X}...`)
+      - pattern: execSync(`...${$X}...`)
+    message: >-
+      Command injection: child_process.exec with template literal containing
+      untrusted input.
+    languages: [javascript]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-78"
+
+  - id: go-sql-injection-sprintf
+    pattern-either:
+      - pattern: $DB.Query(fmt.Sprintf(...))
+      - pattern: $DB.QueryRow(fmt.Sprintf(...))
+      - pattern: $DB.Exec(fmt.Sprintf(...))
+    message: >-
+      SQL injection: query built via fmt.Sprintf. Use parameterized queries with
+      placeholders.
+    languages: [go]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-89"
+
+  - id: go-weak-crypto-md5
+    pattern-either:
+      - pattern: md5.New()
+      - pattern: md5.Sum(...)
+    message: >-
+      MD5 is cryptographically broken; use SHA-256 or stronger for hashing
+      sensitive values.
+    languages: [go]
+    severity: WARNING
+    metadata:
+      cwe: "CWE-327"
+
+  - id: java-sql-injection-statement-concat
+    pattern-either:
+      - pattern: $STMT.executeQuery("..." + $X)
+      - pattern: $STMT.execute("..." + $X)
+      - pattern: $STMT.executeUpdate("..." + $X)
+    message: >-
+      SQL injection: query built via string concatenation. Use
+      PreparedStatement with parameter placeholders.
+    languages: [java]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-89"
+
+  - id: java-insecure-deserialization
+    pattern: new ObjectInputStream(...)
+    message: >-
+      Insecure deserialization via ObjectInputStream on untrusted input
+      enables remote code execution.
+    languages: [java]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-502"
+
+  - id: java-xxe-vulnerable-parser
+    pattern-either:
+      - pattern: DocumentBuilderFactory.newInstance()
+      - pattern: SAXParserFactory.newInstance()
+    message: >-
+      XML parser created without XXE protections. Disable external entities
+      via setFeature flags.
+    languages: [java]
+    severity: WARNING
+    metadata:
+      cwe: "CWE-611"

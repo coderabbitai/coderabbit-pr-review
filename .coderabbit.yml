@@ -1,0 +1,10 @@
+reviews:
+  tools:
+    semgrep:
+      enabled: false
+    ast-grep:
+      enabled: false
+    owasp-top10:
+      enabled: false
+    pmd:
+      enabled: false
