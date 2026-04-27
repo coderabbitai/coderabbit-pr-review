@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "no-implicit-this": "error",
+    "deprecated-each-syntax": "error",
+    "no-curly-component-invocation": "error",
+    "no-positive-tabindex": "error"
+  }
+}
