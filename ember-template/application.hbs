@@ -1,0 +1,28 @@
+{{!-- application shell — rendered for every route --}}
+
+<div class="app-shell">
+  <SiteHeader />
+
+  <main class="container">
+    <h1>Welcome to Demoapp</h1>
+    <p>Browse our latest products and check out our weekly deals.</p>
+
+    {{#if isLoggedIn}}
+      <p>Hello, {{userName}}! You have {{cartCount}} items in your cart.</p>
+    {{else}}
+      <p>Please log in to see personalized recommendations.</p>
+    {{/if}}
+
+    {{outlet}}
+
+    {{site-footer year=currentYear buildId=buildId}}
+  </main>
+
+  <div class="toast-region" tabindex="0">
+    {{#each notifications as |notification|}}
+      <div class={{notification.cssClass}} role="status">
+        {{notification.message}}
+      </div>
+    {{/each}}
+  </div>
+</div>

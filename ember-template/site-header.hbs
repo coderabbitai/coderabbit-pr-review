@@ -1,0 +1,32 @@
+{{!-- top-of-page site header --}}
+
+<header class="site-header" role="banner">
+  <a href="/" class="logo">
+    <img src="/assets/logo.svg" alt="Demoapp">
+  </a>
+
+  <nav class="primary-nav" role="navigation">
+    <ul>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/deals">Deals</a></li>
+      <li><a href="/help">Click here</a></li>
+      <li><a href="/blog">More</a></li>
+      <li><a href="/about">read more</a></li>
+    </ul>
+  </nav>
+
+  <div class="utility-nav" role="navigation">
+    <button role="button" onclick={{action "openSearch"}}>
+      Search
+    </button>
+
+    <CartButton @count={{this.cartCount}} />
+
+    {{#if this.isLoggedIn}}
+      <span class="user">Hi, {{this.userName}}</span>
+      <button role="button" onclick={{action "logout"}}>Sign out</button>
+    {{else}}
+      <a href="/login">Sign in</a>
+    {{/if}}
+  </div>
+</header>

@@ -1,0 +1,38 @@
+{{!-- product listing — paginated grid --}}
+
+<section class="product-grid">
+  <h1>All products</h1>
+
+  <p class="result-count">
+    Showing {{resultCount}} results for "{{searchQuery}}"
+  </p>
+
+  {{#if products}}
+    <ul class="products">
+      {{#each product in products}}
+        <li class="product-card">
+          {{product-card
+            product=product
+            showSaleBadge=product.onSale
+            onAddToCart=(action "addToCart" product)
+          }}
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No products matched your filters.</p>
+  {{/if}}
+
+  <nav class="pagination" role="navigation">
+    {{#each pages as |page|}}
+      <a href="?page={{page}}" class={{if page.active "active"}}>
+        {{page.number}}
+      </a>
+    {{/each}}
+  </nav>
+
+  <div class="filters" tabindex="3">
+    <h2>Refine</h2>
+    <button onclick={{action "clearFilters"}}>Clear filters</button>
+  </div>
+</section>

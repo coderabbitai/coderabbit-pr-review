@@ -1,0 +1,36 @@
+{{!-- cart button component — shown in site header --}}
+
+<button
+  class="cart-button"
+  onclick={{action "openCart"}}
+  data-test-cart-button
+>
+  <svg class="icon" aria-hidden="true">
+    <use href="#cart-icon" />
+  </svg>
+
+  <span class="label">Cart</span>
+
+  {{#if @count}}
+    <span class="badge" role="status">
+      {{@count}}
+    </span>
+  {{/if}}
+</button>
+
+{{#if showQuickPreview}}
+  <div class="quick-preview" tabindex="2">
+    <h3>Items in your cart</h3>
+
+    {{#each item in @items}}
+      <div class="item">
+        <img src={{item.thumbnail}} alt={{item.name}}>
+        <span>{{item.name}}</span>
+        <button onclick={{action "removeFromCart" item}}>Remove</button>
+      </div>
+    {{/each}}
+
+    <a href="/cart">View cart</a>
+    <a href="/checkout">Checkout</a>
+  </div>
+{{/if}}

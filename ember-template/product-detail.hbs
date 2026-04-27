@@ -1,0 +1,45 @@
+{{!-- product detail page --}}
+
+<article class="product-detail">
+  <div class="gallery">
+    {{#each product.images as |image|}}
+      <img src={{image.url}} alt={{image.alt}}>
+    {{/each}}
+  </div>
+
+  <div class="info">
+    <h1>{{product.name}}</h1>
+    <p class="sku">SKU: {{product.sku}}</p>
+    <p class="price">${{product.price}}</p>
+
+    <div class="description">
+      {{product.longDescription}}
+    </div>
+
+    {{#if product.inStock}}
+      <form>
+        <label>
+          Quantity
+          <input type="number" min="1" value="1">
+        </label>
+
+        <button onclick={{action "addToCart" product}}>Add to cart</button>
+        <button onclick={{action "addToWishlist" product}}>Save for later</button>
+      </form>
+    {{else}}
+      <p>Out of stock</p>
+      <button onclick={{action "notifyWhenAvailable" product}}>Notify me</button>
+    {{/if}}
+  </div>
+
+  <section class="reviews">
+    <h2>Customer reviews</h2>
+    {{#each review in reviews}}
+      <article class="review">
+        <strong>{{review.author}}</strong>
+        <time>{{review.createdAt}}</time>
+        <p>{{review.body}}</p>
+      </article>
+    {{/each}}
+  </section>
+</article>
