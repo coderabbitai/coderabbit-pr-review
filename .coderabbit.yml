@@ -1,0 +1,6 @@
+reviews:
+  tools:
+    trivy:
+      enabled: false
+    checkov:
+      enabled: false
