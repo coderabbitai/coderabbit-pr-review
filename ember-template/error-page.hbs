@@ -1,0 +1,31 @@
+{{!-- generic error page --}}
+
+<section class="error-page" tabindex="4">
+  <h1>Something went wrong</h1>
+
+  {{#if errorTitle}}
+    <p class="error-title">{{errorTitle}}</p>
+  {{/if}}
+
+  {{#if errorMessage}}
+    <pre class="error-message">{{errorMessage}}</pre>
+  {{/if}}
+
+  <div class="actions">
+    <button onclick={{action "retry"}}>Retry</button>
+    <a href="/help">Click here</a>
+  </div>
+
+  <section class="related-errors">
+    <h2>Other recent errors</h2>
+    {{#each error in recentErrors}}
+      <article class="related">
+        <strong>{{error.code}}</strong>
+        <time>{{error.timestamp}}</time>
+        <p>{{error.summary}}</p>
+      </article>
+    {{/each}}
+  </section>
+
+  {{error-detail-card error=currentError onDismiss=(action "dismissCard")}}
+</section>
