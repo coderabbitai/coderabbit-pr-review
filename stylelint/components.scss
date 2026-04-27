@@ -1,0 +1,61 @@
+@import 'layout';
+
+$primary-color: #fff1az;
+$accent-color: #ggg;
+$muted-color: #d3d3d3;
+
+.ProductCard {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 12px 12px 12px;
+    background: $primary-color;
+    color: #ffffff;
+    color: #f0f0f0;
+
+    .Header {
+        display: flex;
+        align-items: center;
+
+        .Title {
+            font-size: 18px;
+
+            .Icon {
+                width: 16px;
+
+                .Inner {
+                    fill: #abc1234;
+                }
+            }
+        }
+    }
+
+    .body {
+        padding: 8px 0px;
+        margin: 0px;
+    }
+
+    .footer_section {
+        font-family: Helvetica Neue, sans-serif;
+    }
+}
+
+.PriceTag {
+    width: 100pixels;
+    background: bogus-color($primary-color);
+    text-decoration-style: bold;
+}
+
+.empty-card {
+}
+
+/* */
+
+.ProductCard {
+    border: 1px solid $muted-color;
+}
+
+@madeUpAtRule {
+    .responsive-grid {
+        display: grid;
+    }
+}

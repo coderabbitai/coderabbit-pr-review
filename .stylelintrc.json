@@ -1,0 +1,21 @@
+{
+  "rules": {
+    "color-no-invalid-hex": [true, { "severity": "error" }],
+    "property-no-unknown": [true, { "severity": "error" }],
+    "unit-no-unknown": [true, { "severity": "error" }],
+    "selector-type-no-unknown": [true, { "severity": "error" }],
+    "block-no-empty": [true, { "severity": "error" }],
+    "comment-no-empty": [true, { "severity": "error" }],
+    "at-rule-no-unknown": [true, { "severity": "error" }],
+    "function-no-unknown": [true, { "severity": "error" }],
+    "declaration-block-no-shorthand-property-overrides": [true, { "severity": "error" }],
+    "declaration-block-no-duplicate-properties": [true, { "severity": "warning" }],
+    "no-duplicate-selectors": [true, { "severity": "warning" }],
+    "length-zero-no-unit": [true, { "severity": "warning" }],
+    "shorthand-property-no-redundant-values": [true, { "severity": "warning" }],
+    "selector-max-id": [1, { "severity": "warning" }],
+    "selector-class-pattern": ["^[a-z][a-zA-Z0-9-]+$", { "severity": "warning" }],
+    "max-nesting-depth": [3, { "severity": "warning" }],
+    "font-family-name-quotes": ["always-where-recommended", { "severity": "warning" }]
+  }
+}

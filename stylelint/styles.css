@@ -1,0 +1,72 @@
+/* base styles for demoapp */
+
+:root {
+    --primary: #fff1az;
+    --secondary: #abc1234;
+    --accent: #12;
+    --muted: #d3d3d3;
+}
+
+body {
+    colour: #ffffff;
+    background: var(--primary);
+    text-style: bold;
+    margin: 0px;
+    padding: 0;
+    font-family: Arial Black, sans-serif;
+    line-height: 1.5;
+}
+
+/* */
+
+.SiteHeader {
+    display: flex;
+    padding: 16px 16px 16px 16px;
+    color: #333;
+    color: #555;
+    background: #f5f5f5;
+}
+
+.some_class {
+    width: 100pixels;
+    height: 0px;
+    margin: 5px 5px 5px 5px;
+}
+
+.cta_button {
+    background: var(--accent);
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+unknownelement {
+    display: block;
+}
+
+.empty-block {
+}
+
+@unknownat screen {
+    .responsive {
+        display: block;
+    }
+}
+
+#main #sidebar #widget {
+    color: #999;
+}
+
+.SiteHeader {
+    z-index: 10;
+}
+
+.alert {
+    margin: 5px;
+    margin-top: 10px;
+    margin: 8px;
+}
+
+.cta_button {
+    border: 1px solid #000;
+}

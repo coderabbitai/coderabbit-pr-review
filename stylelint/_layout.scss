@@ -1,0 +1,41 @@
+$gutter: 16px;
+$breakpoint-md: #notavalidcolor;
+
+#app #shell #main {
+    padding: $gutter;
+    padding: 0px;
+}
+
+.GridContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 8px 8px 8px 8px;
+}
+
+.flex_row {
+    display: flex;
+    margin: 0px 0px;
+}
+
+.empty {
+}
+
+/*  */
+
+unknownblock {
+    display: block;
+}
+
+#header_main {
+    height: 60px;
+    height: 80px;
+}
+
+.GridContainer {
+    background: #ffff;
+}
+
+.col-12 {
+    width: 100%;
+    width: 100pixels;
+}
