@@ -1,0 +1,21 @@
+detectors:
+  - name: InternalServiceToken
+    keywords:
+      - internal_token
+      - INTERNAL_TOKEN
+    regex:
+      key: 'internal_token_[a-f0-9]{32}'
+
+  - name: DemoAppApiKey
+    keywords:
+      - demoapp_api_key
+      - DEMOAPP_API_KEY
+    regex:
+      key: 'demoapp_[a-zA-Z0-9]{40}'
+
+  - name: DemoAppDeployToken
+    keywords:
+      - deploy_token
+      - DEPLOY_TOKEN
+    regex:
+      key: 'dpt_[a-zA-Z0-9]{32}'

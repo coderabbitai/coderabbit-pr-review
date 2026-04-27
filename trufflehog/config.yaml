@@ -1,0 +1,31 @@
+application:
+  name: demoapp
+  environment: production
+
+database:
+  primary:
+    url: postgres://demoapp:Sup3rS3cr3tP@ssword@db.internal.example.com:5432/demoapp_prod
+    pool_size: 20
+  cache:
+    url: mongodb://demoapp:Cache_Pa55word!@cache.internal.example.com:27017/demoapp_cache
+  read_replica:
+    url: postgres://reader:R3ad0nly_P@ss@replica.internal.example.com:5432/demoapp_prod
+
+aws:
+  region: us-east-1
+  access_key_id: AKIAIOSFODNN7EXAMPLE
+  secret_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+monitoring:
+  datadog_api_key: 1234567890abcdef1234567890abcdef
+  datadog_app_key: abcdef1234567890abcdef1234567890abcdef12
+
+internal:
+  service_token: internal_token_2c8b41d9c0a64e1e9b0f3e7a1d5c8b41
+  deploy_token: dpt_a1b2c3d4e5f6789012345678901234ab
+  api_key: demoapp_kJ8mN2pQ4rS6tU8vW0xY2zA4bC6dE8fG0hI2jK4l
+
+smtp:
+  host: smtp.example.com
+  username: notifications@demoapp.example.com
+  password: M@ilP@ssword2024
