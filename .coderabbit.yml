@@ -1,5 +1,7 @@
 reviews:
   tools:
+    tflint:
+      enabled: true
     trivy:
       enabled: false
     checkov:
