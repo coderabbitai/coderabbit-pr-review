@@ -1,4 +1,6 @@
+inheritance: false
 reviews:
+  profile: assertive
   tools:
-    emberTemplateLint:
+    ember-template-lint:
       enabled: true
