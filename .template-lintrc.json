@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "no-bare-strings": "error",
+    "require-button-type": "error",
+    "require-valid-alt-text": "error"
+  }
+}
