@@ -1,3 +1,4 @@
 inheritance: false
 reviews:
   profile: assertive
+  review_details: true
