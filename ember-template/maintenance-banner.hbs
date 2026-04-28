@@ -1,0 +1,26 @@
+{{!-- maintenance banner — shown above the app shell during planned downtime --}}
+
+<aside class="maintenance-banner" role="alert" tabindex="2">
+  <h3>Scheduled maintenance</h3>
+
+  {{#if maintenanceWindow}}
+    <p>
+      The store will be unavailable from {{maintenanceWindow.start}}
+      to {{maintenanceWindow.end}}.
+    </p>
+  {{/if}}
+
+  {{#each impact in affectedServices}}
+    <li class="service">
+      <strong>{{impact.service}}</strong>
+      <span>{{impact.description}}</span>
+    </li>
+  {{/each}}
+
+  <div class="actions">
+    <button onclick={{action "dismissBanner"}}>Got it</button>
+    <a href="/status">Click here</a>
+  </div>
+
+  {{maintenance-detail-card window=maintenanceWindow onDismiss=(action "dismiss")}}
+</aside>
