@@ -3,7 +3,3 @@ reviews:
   tools:
     presidio:
       enabled: true
-    opengrep:
-      enabled: false
-    ruff:
-      enabled: false
