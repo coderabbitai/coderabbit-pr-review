@@ -1,0 +1,9 @@
+reviews:
+  review_details: true
+  tools:
+    presidio:
+      enabled: true
+    opengrep:
+      enabled: false
+    ruff:
+      enabled: false
