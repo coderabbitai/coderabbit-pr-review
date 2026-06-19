@@ -1,0 +1,57 @@
+# Intentionally insecure test fixture. Do not use in production.
+on:
+  pull_request_target:
+  workflow_dispatch:
+    inputs:
+      cmd:
+        required: true
+        default: "echo hello"
+
+permissions: write-all
+
+jobs:
+  bad:
+    runs-on: ubuntu-latest
+    env:
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - uses: actions/setup-node@v4
+
+      - uses: docker://alpine:latest
+
+      - name: Cache untrusted dependency path
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ github.event.pull_request.title }}
+
+      - name: Template injection via PR title
+        run: |
+          echo "PR title: ${{ github.event.pull_request.title }}"
+          echo "Branch: ${{ github.head_ref }}"
+
+      - name: Run user-controlled input
+        run: |
+          ${{ github.event.inputs.cmd }}
+
+      - name: Leak secrets into logs
+        run: |
+          echo "AWS key is $AWS_SECRET_ACCESS_KEY"
+          echo "Token is $GH_TOKEN"
+
+      - name: Dangerous curl bash
+        run: |
+          curl https://example.com/install.sh | bash
+
+      - name: Upload secrets as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: secrets
+          path: ~/.ssh
